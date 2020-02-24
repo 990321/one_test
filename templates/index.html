@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{ url_for('static',filename='images/icon.jpg') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
     <title>{{ name }}'s WatchList</title>
 </head>
 <body>
-    <h2>{{ name }}'s WatchList</h2>
+    <h2>
+        <img class="avatar" src="{{ url_for('static',filename='images/0.jpg') }}" alt="头像">
+        {{ name }}'s WatchList
+    </h2>
     {# 使用length过滤器获取movies变量的长度 #}
     <p>{{ movies|length }} Titles</p >
-    <ul>
+    <ul class="movie-list">
         {% for movie in movies %}
         <li>{{ movie.title }} - {{ movie.year }}</li>
         {% endfor %}
     </ul>
 
     <footer>
-        <small>&copy; 2020 <a href=" ">北京网络职业技术学院-人工智能学科</a></small>
+        <small>&copy; 2020 <a href="#">北京网络职业技术学院-人工智能学科</a></small>
     </footer>
+
+    <img class="image-list" src="{{ url_for('static',filename='images/0.jpg') }}" alt="">
 </body>
 </html>

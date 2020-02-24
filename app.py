@@ -1,6 +1,14 @@
-from flask import Flask
-from flask import render_template
+import os
+from flask import Flask,render_template
+from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
+
+# 配置
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////' + os.path.join(app.root_path,'data.db')
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False # 关闭对模型修改的监控
+
+db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
