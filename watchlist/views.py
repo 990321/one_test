@@ -49,6 +49,7 @@ def edit(movie_id):
         return redirect(url_for('index'))
     return render_template('edit.html',movie=movie)
 
+# 设置
 @app.route('/settings',methods=['GET','POST'])
 @login_required
 def settings():

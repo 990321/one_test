@@ -1,5 +1,4 @@
 body{
-    max-width: 1000px;
     margin: 0 auto;
     font-size:14px;
     font-family: Arial, Helvetica, sans-serif;
@@ -13,7 +12,11 @@ footer{
 }
 /* 头像 */
 .avatar{
-    width: 40px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    margin-left: 50px;
 }
 
 /* 电影列表 */
@@ -60,12 +63,11 @@ nav li a :hover{
 }
 .imdb{
     font-size: 12px;
-    font-weight: bold;
-    color: black;
+    color: white;
     text-decoration: none;
-    background: #f5c5f5;
-    border-radius: 5px;
+    background: black;
     padding: 3px 5px;
+    border-radius: 3px;
 }
 
 /*美化input标签*/
@@ -100,11 +102,44 @@ input[type=year]{
     padding: 7px;
     margin: 7px 0;
     border: 1px solid black;
-    color: paleturquoise;
-    background: pink;
+    color: black;
     border-color: palegoldenrod;
+    margin-left: 15%;
+    font-weight: bolder;
+    font-size: 20px;
+
 
 }
+.pagination li>a:hover{
+    text-decoration: none;
+    color: palevioletred;
+}
+.navbar_one{
+    height: 50px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

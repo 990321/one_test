@@ -16,18 +16,18 @@ def initdb(drop):
 @app.cli.command()
 def forge():
     db.create_all()
-    name = "Bruce"
+    name = "Warm"
     movies = [
-        {'title':'杀破狼','year':'2003'},
-        {'title':'扫毒','year':'2018'},
-        {'title':'捉妖记','year':'2016'},
-        {'title':'囧妈','year':'2020'},
-        {'title':'葫芦娃','year':'1989'},
-        {'title':'玻璃盒子','year':'2020'},
-        {'title':'调酒师','year':'2020'},
-        {'title':'釜山行','year':'2017'},
-        {'title':'导火索','year':'2005'},
-        {'title':'叶问','year':'2015'}
+        {'title':'三生三世十里桃花','year':'2020'},
+        {'title':'超时空同居','year':'2018'},
+        {'title':'枕上书','year':'2016'},
+        {'title':'叶问4','year':'2020'},
+        {'title':'无双','year':'2016'},
+        {'title':'反贪风暴4','year':'2020'},
+        {'title':'追龙','year':'2020'},
+        {'title':'敢死队4','year':'2017'},
+        {'title':'极限特工','year':'2018'},
+        {'title':'生化危机：终章','year':'2019'}
     ]
     user = User(name=name)
     db.session.add(user)
@@ -50,7 +50,7 @@ def admin(username,password):
         user.set_password(password)
     else:
         click.echo('创建用户')
-        user = User(username=username,name="雷洛")
+        user = User(username=username,name="Warm")
         user.set_password(password)
         db.session.add(user)
     
