@@ -1,13 +1,13 @@
 import unittest
-
-from app import app,db,Movie,User
+from watchlist import db,app
+from watchlist.models import User,Movie
 
 class WatchlistTestCase(unittest.TestCase):
-    def set_up(self):
+    def setUp(self):
         # 更新配置   在开发和测试时候通常配置是不一样
         app.config.update(
             TESTING = True, # 开启测试模式   出错时候不会输出多余的信息
-            SQLALCHEMY_DATABASE_URI = 'sqlite:///:,memory:' # sqlite内存型数据库，不会干扰开发时的数据库文件
+            SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:' # sqlite内存型数据库，不会干扰开发时的数据库文件
         )
         # 创建数据库和表
         db.create_all()
@@ -66,12 +66,6 @@ class WatchlistTestCase(unittest.TestCase):
         data = response.get_data(as_text=True)
         self.assertIn('删除数据成功',data)
         
-
-    # 测试登出
-    def test_logout(self):
-        response = self.client.get('/logout')
-        data = response.get_data(as_text=True)
-        self.assertIn('退出登录',data)
 
 
 
