@@ -1,2 +1,2 @@
-FLASK_ENV = development
-FLASK_App = watchlist
+FLASK_ENV=development
+FLASK_App=watchlist
