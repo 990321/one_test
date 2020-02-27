@@ -5,13 +5,15 @@
 {# 使用length过滤器获取movies变量的长度 #}
 <p>{{ movies|length }} Titles</p>
 
+{% if current_user.is_authenticated %}
+
 <form method="POST">
     电影名 <input type="text" name="title" autocomplete="off" required>
     年份   <input type="year" name="year" autocomplete="off" required>
     <input type="submit" class="btn" name="submit" value="添加">
 </form>
 
-
+{% endif %}
 <ul class="movie-list">
     {% for movie in movies %}
     <li>
@@ -20,15 +22,16 @@
             <a class="imdb" href="http://v.baidu.com/v?word={{ movie.title }}&ct=301989888&rn=67&pn=0&db=0&s=0&fbl=800&ie=utf-8" target="_blank"
                 title="在imdb中查找此电影">百度视频</a>
         </span>
+        {% if current_user.is_authenticated %}
         <span class="float-right">
             <a class="btn" href="{{ url_for('edit',movie_id=movie.id) }}">编辑</a>
         </span>
         <span class="float-right">
             <form class="inline-form" action="{{ url_for('delete',movie_id=movie.id) }}" method="post">
                 <input type="submit" name="delete" value="删除" onclick="return confirm('是否确定删除')">
-            </form>
-            
+            </form>           
         </span>
+        {% endif %}
     </li>
 
     {% endfor %}
