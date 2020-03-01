@@ -65,6 +65,17 @@ class WatchlistTestCase(unittest.TestCase):
         response = self.client.post('/movie/delete/1',follow_redirects=True)
         data = response.get_data(as_text=True)
         self.assertIn('删除数据成功',data)
+
+    # 添加
+    # def test_add(self):
+    #     self.test_login()
+    #     response = self.client.post('/',data=dict(
+    #         title = '叶问3',
+    #         year = '2020'
+    #     ),follow_redirects=True)
+    #     data = response.get_data(as_text=True)
+    #     self.assertIn('添加数据成功',data)
+
         
 
 

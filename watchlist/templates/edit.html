@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
-<h3>电影编辑页面</h3>
+<h3 style="text-align: center;" >博文编辑页面</h3>
 {# 表单 #}
-<form action="" method="POST">
-    电影名 <input type="text" name="title" autocomplete="off" required>
-    年份 <input type="year" name="year" autocomplete="off" required>
-    <input type="submit" class="btn" name="submit" value="更新">
+<form method="POST"  style="margin-left: 10%;margin-right: 10%;background-color: #F5F5F5;margin-top: 15px;">
+
+
+    博文标题 <input type="text" name="title" autocomplete="off">
+
+    <input id="content" value="" name="content" autocomplete="off">
+
+
+    博文作者<input type="text" name="author" autocomplete="off">
+    <input type="submit" name="submit" value="更新" style="color: black;border-radius: 6px;">
 </form>
 {% endblock %}

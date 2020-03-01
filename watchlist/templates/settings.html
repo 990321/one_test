@@ -2,12 +2,17 @@
 
 
 {% block content %}
-<h3 style="text-align: center;padding-top: 150px;">设置页面</h3>
-<form action="" method="post" style="text-align: center;">
-    你的名字 <br>
-    <input type="text" name="name" autocomplete="off" required><br><br>
+<h3 style="text-align: center;padding-top: 150px;">博文设置页面</h3>
+<form method="POST"  style="margin-left: 10%;margin-right: 10%;background-color: #F5F5F5;margin-top: 15px;">
 
-    <input class="btn" type="submit" name="submit" value="保存" style="color: white;background-color: black;border-radius: 6px;">
+
+    博文标题 <input type="text" name="title" autocomplete="off">
+
+    <input id="content" value="" name="content" autocomplete="off">
+
+
+    博文作者<input type="text" name="author" autocomplete="off">
+    <input type="submit" name="submit" value="设置" style="color: black;border-radius: 6px;">
 </form>
 
 

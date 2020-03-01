@@ -22,6 +22,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='tinymce/js/tinymce/tinymce.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='tinymce_setup.js') }}"></script>
+    <script src="{{ url_for('static',filename='tinymce/js/tinymce/langs/zh_CN.js') }}"></script>
+    <!-- <script src="{{ url_for('static',filename='tinymce/js/tinymce/plugins/imageupload/plugin.min.js') }}"></script> -->
 
     <title>Document</title>
     {% endblock %}
@@ -29,23 +33,26 @@
 
 <body style="margin: 0 auto;">
     <div class="navbar_one">
-        <h2 style="width: 80%;margin: 0 auto;padding-top: 10px;">
+        <h2 style="width: 80%;margin: 0 auto;padding-top: 10px;background-color: #F5F5F5;">
             <img class="avatar" src="{{ url_for('static',filename='images/0.jpg') }}" alt="头像">
             {{ user.name }}Movies
-            <button class="btn btn-default" style="margin-left: 650px; background-color: black;"><a href="{{ url_for('login') }}" style="color: white;text-decoration: none;">登录</a></button>
+            <button class="btn btn-default" style="margin-left: 650px; background-color: black;"><a
+                    href="{{ url_for('login') }}" style="color: white;text-decoration: none;">登录</a></button>
             {% if current_user.is_authenticated %}
-            <button class="btn btn-default" style="background-color: black;"><a href="{{ url_for('logout') }}" style="color: white;text-decoration: none;">退出</a></button>
+            <button class="btn btn-default" style="background-color: black;"><a href="{{ url_for('logout') }}"
+                    style="color: white;text-decoration: none;">退出</a></button>
             {% endif %}
         </h2>
-        
+
     </div>
     {% for message in get_flashed_messages() %}
     <div class="alert">{{ message }}</div>
     {% endfor %}
-    <nav aria-label="..." style="margin-top: 15px;">
+    <nav aria-label="..." style="margin-top: 15px;margin-left: 10%;margin-right: 10%;">
         <ul class="pagination">
             <li class="disabled"><a href="#" aria-label="Previous"></a></li>
-            <li class="active" style="margin-left: 10%;"><a href="{{ url_for('index') }}" style="font-size: 18px;">首页</a></li>
+            <li class="active" style="margin-left: 10%;"><a href="{{ url_for('index') }}"
+                    style="font-size: 18px;">首页</a></li>
             {% if current_user.is_authenticated %}
             <li><a href="{{ url_for('settings') }} " style="font-size: 18px;">设置</a></li>
             {% endif %}
@@ -53,8 +60,10 @@
     </nav>
     {% block content %} {% endblock %}
 
-
-    <footer style="padding-top: 180px;">
+    
+    <!-- <img src="{{ url_for('static',filename='images/0.jpg') }}" alt="" style="margin-left: 35%;"> -->
+    <footer style="padding-top: 100px;">
+        
         <small>&copy; 2020 <a href="#">北京网络职业技术学院-人工智能学科-裴俊生</a></small>
     </footer>
 

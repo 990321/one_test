@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3 style="text-align: center;">博文详情页面</h3>
+{# 表单 #}
+
+<ul class="movie-list" style="margin-left: 10%;margin-right: 10%;background-color: #F5F5F5;margin-top: 15px;">
+
+    <li style="font-size: 18px;font-weight: bold;">
+        博文标题：{{ ariticles.title }}<br>
+        博文内容：{{ ariticles.content }}<br>
+        博文作者：{{ ariticles.author }}<br>
+        发表时间：{{ ariticles.pubdate }}
+    </li>
+</ul>
+{% endblock %}

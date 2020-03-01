@@ -22,16 +22,18 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # 关闭对模型修改的
 app.config['SECRET_KEY'] = os.getenv('SECRET_KEY','dev')
 
 
-db = SQLAlchemy(app)
+db = SQLAlchemy(app) # 通过SQLAlchemy链接数据库，对数据库进行操作
 
 # Flask-login 初始化操作
-login_manager = LoginManager(app)   # 实例化扩展类
+login_manager = LoginManager(app)   # 实例化扩展类,让app和flask_login协同工作
+# 登录视图的名称
 login_manager.login_view = 'login'
+# 自定义登录信息
 login_manager.login_message = '没有登录'
 
 
 @login_manager.user_loader
-def load_user(user_id):   # 创建用户加载回调函数，接受用户ID作为参数
+def load_user(user_id):   # 创建用户   从会话中存储的ID加载用户对象，加载回调函数，接受用户ID作为参数
     from watchlist.models import User
     user = User.query.get(int(user_id))
     return user
