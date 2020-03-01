@@ -1,6 +1,10 @@
 
 {% extends 'base.html' %}
 {% block content %}
+
+
+
+{% if current_user.is_authenticated %}
 <form method="POST"  style="margin-left: 10%;margin-right: 10%;background-color: #F5F5F5;margin-top: 15px;">
 
 
@@ -12,10 +16,6 @@
     博文作者<input type="text" name="author" autocomplete="off">
     <input type="submit" name="submit" value="添加" style="color: black;border-radius: 6px;">
 </form>
-
-
-{% if current_user.is_authenticated %}
-
 
 {% endif %}
 
