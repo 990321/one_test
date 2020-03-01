@@ -35,7 +35,7 @@
     <div class="navbar_one">
         <h2 style="width: 80%;margin: 0 auto;padding-top: 10px;background-color: #F5F5F5;">
             <img class="avatar" src="{{ url_for('static',filename='images/0.jpg') }}" alt="头像">
-            {{ user.name }}Movies
+            {{ user.name }} 博客
             <button class="btn btn-default" style="margin-left: 650px; background-color: black;"><a
                     href="{{ url_for('login') }}" style="color: white;text-decoration: none;">登录</a></button>
             {% if current_user.is_authenticated %}
